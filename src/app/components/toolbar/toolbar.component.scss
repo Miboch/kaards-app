@@ -1,0 +1,75 @@
+﻿@import 'theme';
+@import 'layout';
+
+.toolbar-layout {
+  margin: 0 60px 0 60px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+}
+
+.toolbar-container {
+  height: 45px;
+  width: 100%;
+  background-color: $primary;
+}
+
+.profile-box {
+  width: 140px;
+  background-color: $accent;
+  height: 100%;
+}
+
+.brand-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 22pt;
+  }
+}
+
+.large-nav {
+  position: relative;
+  height: 100%;
+  .main-button {
+    cursor: pointer;
+    border: 10px solid $surface;
+    background-color: $secondary;
+    color: $primary;
+    font-weight: bold;
+    width: 55px;
+    height: 55px;
+    font-size: 22pt;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-10%);
+    &::after {
+      font-weight: 200;
+      display: block;
+      content: attr(data-label);
+      position: absolute;
+      top: 60%;
+      left: 100%;
+      padding-left: 1rem;
+      white-space: nowrap;
+      color: $secondary;
+      font-size: 22pt;
+      text-align: left;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: darken($secondary, 10);
+    }
+    &:active {
+      color: $white;
+    }
+  }
+}
